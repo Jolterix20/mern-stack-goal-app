@@ -6,6 +6,7 @@ const connectDB = require('./config/db')
 
 // Importing routes
 const goalRoutes = require('./routes/goalRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 const PORT = process.env.PORT || 5000
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Routes middleware
 app.use('/api/goals', goalRoutes)
+app.use('/api/users', userRoutes)
 
 // Overriding default error handler
 app.use(errorHandler)
