@@ -1,11 +1,15 @@
 require('dotenv').config()
 const express = require('express')
+const colors = require('colors')
 const { errorHandler } = require('./middleware/errorMiddleware')
+const connectDB = require('./config/db')
 
 // Importing routes
 const goalRoutes = require('./routes/goalRoutes')
 
 const PORT = process.env.PORT || 5000
+
+connectDB()
 
 // Creating Express App
 const app = express()
